@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HM Pools: schematic section of a overflow pool, not to scale -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="Kanit, 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#111111">
+<defs><marker id="arO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111111"/></marker></defs>
+<rect x="0" y="110" width="880" height="310" fill="#EFEEE9"/>
+<rect x="144" y="100" width="592" height="236" fill="#FFFFFF"/>
+<rect x="0" y="100" width="146" height="10" fill="#D9D6CE" stroke="#111111"/>
+<rect x="734" y="100" width="146" height="10" fill="#D9D6CE" stroke="#111111"/>
+<rect x="148" y="128" width="38" height="13" fill="#D3E6EE"/>
+<rect x="694" y="128" width="38" height="13" fill="#D3E6EE"/>
+<path d="M146 104 L146 142 L186 142" fill="none" stroke="#111111" stroke-width="3"/>
+<path d="M734 104 L734 142 L694 142" fill="none" stroke="#111111" stroke-width="3"/>
+<line x1="146" y1="104" x2="186" y2="104" stroke="#111111" stroke-width="3" stroke-dasharray="4 3"/>
+<line x1="694" y1="104" x2="734" y2="104" stroke="#111111" stroke-width="3" stroke-dasharray="4 3"/>
+<rect x="176" y="330" width="528" height="12" fill="#D9D6CE" stroke="#111111"/>
+<path d="M220 318V330M660 318V330" stroke="#111111" stroke-width="2"/>
+<rect x="188" y="104" width="504" height="212" fill="#D3E6EE"/>
+<line x1="188" y1="104" x2="692" y2="104" stroke="#111111" stroke-width="1.2"/>
+<path d="M186 104 L186 318 L694 318 L694 104" fill="none" stroke="#111111" stroke-width="4"/>
+<path d="M192 100 Q180 104 172 122" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arO)"/>
+<path d="M688 100 Q700 104 708 122" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arO)"/>
+<rect x="16" y="280" width="124" height="124" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+<rect x="18" y="362" width="120" height="40" fill="#D3E6EE"/>
+<text x="78" y="298" text-anchor="middle" font-weight="500">BALANCE TANK</text>
+<text x="78" y="314" text-anchor="middle">bathers, waves</text>
+<text x="78" y="330" text-anchor="middle">rain, backwash</text>
+<path d="M166 142 L166 266 L110 266 L110 280" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#arO)"/>
+<path d="M714 142 L714 350 L142 350" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#arO)"/>
+<path d="M40 280 L40 262" stroke="#111111" stroke-width="1.5"/>
+<text x="10" y="256">top-up</text>
+<path d="M78 404 L78 412 L815 412 L815 402" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#arO)"/>
+<path d="M760 380 L300 380" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="6 4"/>
+<path d="M300 380 L300 322M440 380 L440 322M580 380 L580 322" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arO)"/>
+<rect x="760" y="250" width="110" height="150" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+<text x="815" y="268" text-anchor="middle" font-weight="500">TECHNICAL ROOM</text>
+<rect x="770" y="278" width="90" height="22" fill="none" stroke="#111111"/><text x="815" y="293" text-anchor="middle">pump</text>
+<rect x="770" y="304" width="90" height="22" fill="none" stroke="#111111"/><text x="815" y="319" text-anchor="middle">filter</text>
+<rect x="770" y="330" width="90" height="22" fill="none" stroke="#111111"/><text x="815" y="345" text-anchor="middle">heating</text>
+<rect x="770" y="356" width="90" height="22" fill="none" stroke="#111111"/><text x="815" y="371" text-anchor="middle">dosing</text>
+<path d="M440 100 L440 66" stroke="#111111"/>
+<text x="440" y="44" text-anchor="middle" font-weight="500">WATER AT THE RIM</text>
+<text x="440" y="60" text-anchor="middle">flush with the surrounding deck</text>
+<path d="M166 100 L166 30" stroke="#111111"/>
+<text x="172" y="28" font-weight="500">GUTTER + GRATING</text>
+<path d="M714 100 L714 30" stroke="#111111"/>
+<text x="708" y="28" text-anchor="end" font-weight="500">EDGE DEAD LEVEL ON ALL SIDES</text>
+<text x="10" y="170">tank size is</text>
+<text x="10" y="186">calculated by</text>
+<text x="10" y="202">HM Pools</text>
+<text x="10" y="218"></text>
+<text x="320" y="306">clean water returns through the floor</text>
+<text x="320" y="176" font-size="13" font-weight="500">STAINLESS STEEL SHELL</text>
+<text x="320" y="194">gutter water flows down to the balance tank</text>
+</svg>

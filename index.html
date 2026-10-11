@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Architect's pool guide | HM Pools</title>
+  <meta name="description"
+    content="Everything an architect needs to know before planning a stainless steel pool with HM Pools.">
+  <link rel="icon" href="img/logo.svg">
+  <link rel="preload" href="fonts/kanit-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/merriweather-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/hero.jpg" as="image">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#guide">Skip to the guide</a>
+
+  <header class="site-header">
+    
+<a class="site-header__logo" href="#" data-home aria-label="HM Pools, front page">
+  <img src="img/HM_Pools_logo_RGB_musta-2048x1344.png" alt="HM Pools">
+</a>
+
+    <nav class="site-nav" aria-label="Main">
+      <a href="#" data-home>Front page</a>
+      <a href="#" data-nav>Swimming pools</a>
+      <a href="#guide" data-references>References</a>
+      <a href="#guide" data-architect aria-current="page">Architect's guide</a>
+      <a href="#" data-nav>About us</a>
+      <a href="#" data-nav>FAQ</a>
+      <a href="#" data-nav>Contact us</a>
+    </nav>
+    <a class="site-header__lang" href="#" data-nav lang="fi" title="Suomeksi" aria-label="Suomeksi">
+      <svg width="26" height="16" viewBox="0 0 18 11" aria-hidden="true">
+        <rect width="18" height="11" fill="#fff" />
+        <rect x="5" width="3" height="11" fill="#002f6c" />
+        <rect y="4" width="18" height="3" fill="#002f6c" />
+      </svg>
+    </a>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero__bg" src="img/hero.jpg" alt="" width="1983" height="1321" fetchpriority="high">
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal" style="--d: 0">HM Pools / For architects</p>
+      <h1 class="hero__title reveal" id="hero-title" style="--d: 1">Architect's pool guide</h1>
+      <p class="hero__sub reveal" style="--d: 2">Explore stainless steel pool design possibilities and understand what they mean for your project.</p>
+      <p class="hero__description reveal" style="--d: 3">Compare pool types, explore built examples and record your project's essential details at your own pace. Share your ideas with HM Pools when you're ready.</p>
+      <a class="btn btn--solid hero__cta reveal" href="#guide" style="--d: 4">Begin exploring <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <a class="hero__scroll" href="#guide" aria-label="Scroll to the guide">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+        <path d="M4 8l7 7 7-7" />
+      </svg>
+    </a>
+  </section>
+  <div class="guide-layout">
+    <main class="guide" id="guide" tabindex="-1">
+      <section class="stage" aria-labelledby="stage-title">
+        <div class="guide-intro" aria-labelledby="guide-title">
+          <div class="guide-intro__inner">
+            <h2 id="guide-title">Architect's pool guide</h2>
+            <p>
+              Explore stainless steel pool design possibilities,
+              understand what they mean for your project, and share
+              your ideas with HM Pools when you're ready.
+              Start with the essential details on the right, or explore
+              the pool types and examples at your own pace.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="stage__title" id="stage-title">Overflow pool</h2>
+
+        <div class="stage__canvas">
+
+          <!-- Section drawing -->
+          <figure class="drawing" data-panel="section">
+
+            <img class="drawing__img" data-type="skimmer" src="img/drawings/skimmer.svg"
+              alt="Schematic section of a skimmer pool" width="880" height="420" hidden>
+
+            <img class="drawing__img" data-type="overflow" src="img/drawings/overflow.svg"
+              alt="Schematic section of an overflow pool" width="880" height="420">
+
+            <img class="drawing__img" data-type="infinity" src="img/drawings/infinity.svg"
+              alt="Schematic section of an infinity pool" width="880" height="420" hidden>
+
+            <!-- Expand section drawing -->
+            <button class="drawing__expand" id="drawing-expand" type="button" aria-label="Expand section drawing"
+              title="Expand drawing">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5" />
+              </svg>
+            </button>
+
+          </figure>
+
+          <!-- Built example -->
+          <figure class="photo" data-panel="photo" hidden>
+
+            <div class="photo__frame">
+              <img class="photo__img" id="photo-img" src="img/mustasaari.jpg" alt="" decoding="async">
+            </div>
+
+            <figcaption class="photo__caption">
+              <span class="photo__name" id="photo-name"></span>
+              <a class="photo__link" id="photo-link" href="https://hmpools.fi/en/references/" target="_blank"
+                rel="noopener">
+                View project
+              </a>
+            </figcaption>
+
+          </figure>
+
+          <!-- Reference projects -->
+          <div class="refs" data-panel="refs" id="refs" hidden></div>
+
+        </div>
+
+        <dl class="stats" id="stats"></dl>
+        <p class="stage__note">Schematic section, not to scale.</p>
+      </section>
+
+      <aside class="panel" aria-label="Pool guide">
+
+        <!-- Expand / collapse the right panel -->
+        <button class="panel__resize" type="button" aria-label="Expand information panel" aria-expanded="false"
+          aria-controls="guide-panel-content" title="Expand or collapse panel">
+          <span class="panel__resize-icon" aria-hidden="true">‹</span>
+        </button>
+
+        <div class="panel__scroll" id="guide-panel-content">
+          <div class="panel__intro">
+            <h2 class="panel__heading">Learn as you plan your pool</h2>
+            <p>
+              Explore each topic, then record what you know. Not decided? Ask for advice. You can change your answers at any time.
+            </p>
+          </div>
+
+          <button class="upload-shortcut" type="button" data-action="next" data-section="upload">Already have a sketch? Add it first &rarr;</button><div class="accordion" id="sections"></div>
+        </div>
+
+        <div class="plan">
+          <p class="plan__count" id="plan-count" aria-live="polite"></p>
+
+          <div class="plan__actions">
+            
+            <button class="btn btn--solid" type="button" id="book">Review &amp; contact HM Pools <span aria-hidden="true">&rarr;</span></button>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <dialog class="image-lightbox" id="image-lightbox" aria-label="Enlarged pool image">
+    <button class="image-lightbox__close" id="image-lightbox-close" type="button" aria-label="Close enlarged image"
+      title="Close">
+      &times;
+    </button>
+
+    <img class="image-lightbox__img" id="image-lightbox-img" alt="">
+  </dialog>
+
+  <dialog class="modal" id="consult" aria-labelledby="consult-title">
+    <div class="modal__inner">
+      <button class="modal__close" type="button" data-close aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+          <path d="M2 2l14 14M16 2L2 16" />
+        </svg>
+      </button>
+
+      <form class="modal__form" id="consult-form" novalidate>
+        <header class="modal__head">
+          <h2 class="modal__title" id="consult-title" tabindex="-1">Review your project</h2>
+          <p class="modal__lead" id="consult-lead">Check your answers before adding contact details.</p>
+        </header>
+
+        <section id="review-step" aria-label="Project summary">
+          <div class="review-tools">
+            <button class="review-download" type="button" id="download-summary" title="Open print options to save your summary as PDF">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg>
+              Download PDF
+            </button>
+          </div>
+          <dl class="modal__plan" id="consult-plan" aria-label="Your project brief"></dl>
+          <p id="review-missing" role="status"></p>
+          <button class="btn btn--solid" type="button" id="continue-contact">Continue to contact details</button>
+        </section>
+        <div id="contact-step" hidden>
+          <button class="summary-edit" type="button" id="back-review">Back to project summary</button>
+
+        <div class="modal__grid">
+          <div class="mfield">
+            <label for="c-name">Name <span aria-hidden="true">*</span></label>
+            <input id="c-name" name="name" type="text" autocomplete="name" required>
+            <p class="mfield__error" id="c-name-err" hidden>Please enter your name.</p>
+          </div>
+          <div class="mfield">
+            <label for="c-company">Company <span class="mfield__opt">(optional)</span></label>
+            <input id="c-company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div class="mfield">
+            <label for="c-phone">Phone <span aria-hidden="true">*</span></label>
+            <input id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            <p class="mfield__error" id="c-phone-err" hidden>Please enter a phone number.</p>
+          </div>
+          <div class="mfield">
+            <label for="c-email">Email <span aria-hidden="true">*</span></label>
+            <input id="c-email" name="email" type="email" autocomplete="email" required>
+            <p class="mfield__error" id="c-email-err" hidden>Please enter a valid email address.</p>
+          </div>
+          <div class="mfield mfield--wide">
+            <label for="c-message">Message <span class="mfield__opt">(optional)</span></label>
+            <textarea id="c-message" name="message" rows="4"
+              placeholder="Timeline, budget range, questions for HM Pools"></textarea>
+          </div>
+        </div>
+
+        <div class="mfield">
+          <label class="consent">
+            <input type="checkbox" id="c-consent" name="consent" required>
+            <span>I accept that the form entries are checked for spam and stored encrypted for 14 days.</span>
+          </label>
+          <p class="mfield__error" id="c-consent-err" hidden>Please accept to send the request.</p>
+        </div>
+
+        <div class="modal__foot">
+          <p class="modal__direct">Prefer to call? <a href="tel:+358443600030">+358 44 360 0030</a></p>
+          <button class="btn btn--solid modal__send" type="submit">Send project enquiry</button>
+        </div>
+      </div></form>
+
+      <div class="modal__done" id="consult-done" hidden>
+        <h2 class="modal__title" tabindex="-1">Thank you</h2>
+        <p class="modal__lead">This prototype shows the completed enquiry. No information or attachments have been sent.
+        </p>
+        <button class="btn btn--solid" type="button" data-close>Back to the guide</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+
+</html>
