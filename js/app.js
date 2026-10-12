@@ -106,10 +106,32 @@ var state = {
 
   /* ---------- Section bodies ---------- */
 
-  function actionButton(action, section, label, pressed, choice) {
-    return '<button class="chip' + (action === 'advice' ? ' chip--advice' : '') + '" type="button" data-action="' + action + '" data-section="' + section +
+  function actionButton(action, section, label, pressed, choice, preview, expanded) {
+    var content = action === 'advice' ? '<span class="chip__icon" aria-hidden="true">?</span>' + esc(label) : esc(label);
+    if (preview) {
+      content = (preview.src ? '<span class="option-card__media"><img src="' + esc(preview.src) + '" alt="" loading="lazy" width="160" height="100"></span>' : '') +
+        '<span class="option-card__copy"><span class="option-card__title">' + esc(label) + '</span><span class="option-card__meta">' + esc(preview.meta) + '</span>' +
+        '<span class="option-card__affordance">' + (pressed ? 'Selected · click to remove' : 'Select & explore') + '<span aria-hidden="true">↗</span></span></span>';
+    }
+    return '<button class="chip' + (action === 'advice' ? ' chip--advice' : '') + (preview ? ' option-card' + (preview.src ? '' : ' option-card--text') : '') + '" type="button" data-action="' + action + '" data-section="' + section +
       '" data-choice="' + (choice || '') + '" data-focus-key="' + action + '-' + section + '-' + (choice || '') +
-      '" aria-pressed="' + Boolean(pressed) + '">' + (action === 'advice' ? '<span class="chip__icon" aria-hidden="true">?</span>' : '') + esc(label) + '</button>';
+      '" aria-pressed="' + Boolean(pressed) + '"' + (preview ? ' aria-expanded="' + Boolean(expanded) + '"' : '') + '>' + content + '</button>';
+  }
+
+  function optionPreview(section, choice) {
+    if (section.id === 'type') return {src: 'img/drawings/' + choice.id + '.svg', meta: 'Section drawing · Technical guidance'};
+    if (section.id === 'features' && choice.id === 'heat') return {src: '', meta: 'Technical guidance'};
+    if (choice.img && HM.refByImg[choice.img]) return {src: choice.img, meta: 'Built example · Design considerations'};
+    if (section.multiple && choice.id === 'other') return {src: '', meta: 'Add a custom requirement'};
+    if (section.id === 'water') {
+      var waterDetails = {
+        mains: 'Fill volume \u00b7 Top-up \u00b7 Drainage',
+        well: 'Water testing \u00b7 Supply capacity',
+        natural: 'Steel grade \u00b7 Water treatment'
+      };
+      return {src: '', meta: waterDetails[choice.id]};
+    }
+    return {src: '', meta: 'Explore design considerations'};
   }
 
   function bodyChoice(section) {
@@ -123,9 +145,9 @@ var state = {
     }
     var chips = '<p class="acc__subhead">' + (section.multiple ? 'What interests you?' : 'What seems right for this project?') + '</p>' +
       '<p class="preference-hint">Select what you know. You can always change your answers later.</p>' +
-      '<div class="choices choices--answers">' + section.choices.map(function(c) {
+      '<div class="choices choices--answers choices--cards">' + section.choices.map(function(c) {
         return actionButton('pick', section.id, c.label,
-          section.multiple ? selected.indexOf(c.id) !== -1 : state.picks[section.id] === c.id, c.id);
+          section.multiple ? selected.indexOf(c.id) !== -1 : state.picks[section.id] === c.id, c.id, optionPreview(section,c), Boolean(cur && cur.id === c.id));
       }).join('') + actionButton('advice', section.id, 'Not decided - I need advice', state.advice[section.id]) + '</div>';
     if (section.multiple && selected.indexOf('other') !== -1) {
       chips += '<div class="field"><label for="other-features">Other requirement</label><input id="other-features" data-other="features" value="' + esc(state.otherText.features || '') + '"></div>';
@@ -141,10 +163,12 @@ var state = {
     var fields = section.fields.map(function (f) {
       var id = "dim-" + f[0];
       return '<div class="field"><label for="' + id + '">' + esc(f[1]) + "</label>" +
-        '<input id="' + id + '" type="number" inputmode="decimal" min="0" step="0.1" data-dim="' + f[0] +
-        '" placeholder="' + esc(f[2]) + '" value="' + esc(state.dims[f[0]] || "") + '"></div>';
+        '<div class="dimension-value"><input id="' + id + '" type="number" inputmode="decimal" min="0" step="0.1" data-dim="' + f[0] +
+        '" placeholder="' + esc(f[2]) + '" value="' + esc(state.dims[f[0]] || "") + '"><span aria-hidden="true">m</span></div></div>';
     }).join("");
-    return '<p class="acc__text">' + esc(section.blurb) + '</p>' + specList(section.specs) + '<h4 class="acc__subhead">Your approximate dimensions</h4><div class="fields">' + fields + '</div>';
+    return '<p class="acc__text">' + esc(section.blurb) + '</p>' +
+      '<div class="dimension-schedule"><h4 class="acc__subhead">Your approximate dimensions</h4><div class="fields">' + fields + '</div></div>' +
+      specList(section.specs);
   }
 
   function bodyUpload(section) {
@@ -155,24 +179,24 @@ var state = {
         '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg></button></li>';
     }).join("");
     return '<p class="acc__text">' + esc(section.blurb) + "</p>" +
-      '<label class="dropzone">' +
+      '<div class="project-workspace"><div class="project-workspace__files"><label class="dropzone">' +
       '<svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M11 15V3M6 8l5-5 5 5M2 15v5h18v-5"/></svg>' +
       '<span class="dropzone__title">Drop files or click to upload</span>' +
       '<span class="dropzone__hint">' + esc(section.formats) + "</span>" +
       '<input class="dropzone__input" type="file" multiple accept="' + esc(section.accept) + '" data-action="upload">' +
       "</label>" +
       (files ? '<ul class="files">' + files + "</ul>" : "") +
-      '<h4 class="acc__subhead">Helpful to include</h4><ul class="helpful">' +
-      section.helpful.map(function (h) { return "<li>" + esc(h) + "</li>"; }).join("") + "</ul>" +
       '<div class="field"><label for="notes">Notes for HM Pools</label>' +
-      '<textarea id="notes" rows="3" data-notes placeholder="Timeline, budget range, client wishes\u2026">' + esc(state.notes) + "</textarea></div>";
+      '<textarea id="notes" rows="3" data-notes placeholder="Timeline, budget range, client wishes\u2026">' + esc(state.notes) + "</textarea></div></div>" +
+      '<div class="project-workspace__guide"><h4 class="acc__subhead">Helpful to include</h4><ul class="helpful">' +
+      section.helpful.map(function (h) { return "<li>" + esc(h) + "</li>"; }).join("") + "</ul></div></div>";
   }
 
   function sectionBody(section) {
     var body = section.kind === 'dims' ? bodyDims(section) : section.kind === 'upload' ? bodyUpload(section) : bodyChoice(section);
     var index = HM.sections.indexOf(section);
     var next = HM.sections[index + 1];
-    var intro = section.intro ? '<div class="key-reminder"><strong>Before you design</strong><p>' + esc(section.intro) + '</p></div>' : '';
+    var intro = section.intro ? '<div class="key-reminder"><strong>What to consider early on</strong><p>' + esc(section.intro) + '</p></div>' : '';
     if (section.kind === 'dims') body += '<div class="choices">' + actionButton('advice', 'dims', 'Dimensions not decided - I need advice', state.advice.dims) + '</div>';
     return intro + body + '<div class="section-next">' + (next ?
       '<button class="section-next__link" type="button" data-action="next" data-section="' + next.id + '">Next: ' + esc(next.title) + ' <span aria-hidden="true">↘</span></button>' :
@@ -202,14 +226,16 @@ var state = {
   }
   function renderSections() {
     $('#sections').innerHTML = groups.map(function(g, groupIndex) {
-      return '<section class="content-group" aria-labelledby="group-' + groupIndex + '"><header class="section-group"><h2 id="group-' + groupIndex + '">' + esc(g.title) + '</h2><p>' + esc(g.text) + '</p></header>' +
-        HM.sections.slice(g.start,g.end).map(function(section,index) {
-          return '<section class="guide-section" id="section-' + section.id + '" data-id="' + section.id + '" aria-labelledby="heading-' + section.id + '"><header class="section-heading"><span class="section-number">' + String(g.start+index+1).padStart(2,'0') + '</span><h3 id="heading-' + section.id + '" tabindex="-1">' + esc(section.title) + '</h3></header><div id="body-' + section.id + '">' + sectionBody(section) + '</div></section>';
+      var groupClass = ['essential', 'share', 'supporting'][groupIndex];
+      return '<section class="content-group content-group--' + groupClass + '" aria-labelledby="group-' + groupIndex + '"><header class="section-group"><div class="section-group__copy"><h2 id="group-' + groupIndex + '">' + esc(g.title) + '</h2><p>' + esc(g.text) + '</p></div></header>' +
+        HM.sections.slice(g.start,g.end).map(function(section) {
+          var treatment = section.id === 'type' ? 'pool-type' : section.kind === 'dims' ? 'dimensions' : section.kind === 'upload' ? 'upload' : section.kind === 'info' ? 'technical' : groupIndex === 2 ? 'supporting' : 'essential';
+          return '<section class="guide-section guide-section--' + treatment + '" id="section-' + section.id + '" data-id="' + section.id + '" aria-labelledby="heading-' + section.id + '"><header class="section-heading"><h3 id="heading-' + section.id + '" tabindex="-1">' + esc(section.title) + '</h3></header><div id="body-' + section.id + '">' + sectionBody(section) + '</div></section>';
         }).join('') + '</section>';
     }).join('');
     $('#project-nav').innerHTML = groups.map(function(g) {
       return '<div class="nav-group"><h3>' + esc(g.title) + '</h3>' + HM.sections.slice(g.start,g.end).map(function(section) {
-        return '<a href="#section-' + section.id + '" data-action="next" data-section="' + section.id + '"><span>' + esc(section.title) + '</span><small data-status="' + section.id + '"></small></a>';
+        return '<a href="#section-' + section.id + '" data-action="next" data-section="' + section.id + '"><span class="nav-group__title">' + esc(section.title) + '</span><small data-status="' + section.id + '"></small></a>';
       }).join('') + '</div>';
     }).join('');
     $('#mobile-section').innerHTML = groups.map(function(g) { return '<optgroup label="' + esc(g.title) + '">' + HM.sections.slice(g.start,g.end).map(function(section) { return '<option value="' + section.id + '">' + esc(section.title) + '</option>'; }).join('') + '</optgroup>'; }).join('');
@@ -460,8 +486,9 @@ var state = {
   function scrollToGuide(animateEntry) {
     cancelGuideScroll();
     var start = window.scrollY;
-    var target = $('#guide');
-    var end = target.getBoundingClientRect().top + start - (parseFloat(getComputedStyle(target).scrollMarginTop) || 0);
+    var target = $('.guide-intro');
+    var offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--anchor-offset')) || 0;
+    var end = target.getBoundingClientRect().top + start - offset;
     end = Math.max(0, Math.min(end, document.documentElement.scrollHeight - window.innerHeight));
     if (!animateEntry && scrollBehavior() === 'instant') { window.scrollTo({top: end, behavior: 'instant'}); return; }
     var started = null;
@@ -487,7 +514,7 @@ var state = {
   /* ---------- Events ---------- */
   document.addEventListener('click',function(e) {
     if(e.target.closest('[data-home], [data-architect]')) { e.preventDefault(); showLanding(); return; }
-    if(e.target.closest('.hero__cta, .hero__scroll, .skip-link')) { e.preventDefault(); enterGuide(Boolean(e.target.closest('.hero__cta, .hero__scroll'))); return; }
+    if(e.target.closest('.hero__cta, .skip-link')) { e.preventDefault(); enterGuide(Boolean(e.target.closest('.hero__cta'))); return; }
     var el=e.target.closest('[data-action], [data-close], #book');
     if(!el)return;
     if(el.matches('a'))e.preventDefault();

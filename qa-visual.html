@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Architect's pool guide | HM Pools</title>
+  <meta name="description"
+    content="Everything an architect needs to know before planning a stainless steel pool with HM Pools.">
+  <link rel="icon" href="img/logo.svg">
+  <link rel="preload" href="fonts/kanit-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/merriweather-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/hero.jpg" as="image">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#guide">Skip to the guide</a>
+
+  <header class="site-header">
+    <div class="site-header__logo" aria-label="HM Pools">
+      <img src="img/HM_Pools_logo_RGB_musta-2048x1344.png" alt="HM Pools">
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <span class="site-nav__label" title="HM Pools home page — preview label">Front page</span>
+      <span class="site-nav__label" title="Swimming pools — preview label">Swimming pools</span>
+      <span class="site-nav__label" title="Built project references — preview label">References</span>
+      <a href="#" data-architect aria-current="page">Architect's Guide</a>
+      <span class="site-nav__label" title="About HM Pools — preview label">About us</span>
+      <span class="site-nav__label" title="Frequently asked questions — preview label">FAQ</span>
+    </nav>
+    <div class="site-header__actions">
+      <button class="site-header__contact" type="button" data-action="direct-contact">Contact <span aria-hidden="true">&rarr;</span></button>
+      <div class="language-switch" aria-label="Language indicator"><span lang="en" aria-current="true">EN</span><span aria-hidden="true">/</span><span lang="fi" title="Finnish version is unavailable in this prototype">FI</span></div>
+    </div>
+  </header>
+
+  <div class="landing">
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero__bg" src="img/hero.jpg" alt="" width="1983" height="1321" fetchpriority="high">
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal" style="--d: 0">HM Pools / Architect's Guide</p>
+      <h1 class="hero__title reveal" id="hero-title" style="--d: 1">Explore what's possible for your pool project.</h1>
+      <p class="hero__sub reveal" style="--d: 2">Technical insight for early-stage pool design.</p>
+      <a class="btn btn--solid hero__cta reveal" href="#guide" style="--d: 3">Start exploring <span aria-hidden="true">&darr;</span></a>
+    </div>
+  </section>
+  <section class="hero-capabilities" aria-labelledby="hero-capabilities-title">
+    <div class="hero-capabilities__inner">
+      <h2 class="hero-capabilities__label" id="hero-capabilities-title">What this guide helps you do</h2>
+      <div><h3>Explore</h3><p>Drawings, examples and technical guidance</p></div>
+      <div><h3>Share</h3><p>Project details and open questions</p></div>
+      <div><h3>Connect</h3><p>Start a conversation with HM Pools</p></div>
+    </div>
+  </section>
+  </div>
+  <div class="guide-layout">
+    <main class="guide" id="guide" tabindex="-1">
+      <div class="mobile-project">
+        <label for="mobile-section">Explore <span id="mobile-progress"></span></label>
+        <select id="mobile-section" aria-label="Jump to a category"></select>
+        <button class="btn btn--solid" type="button" data-action="review">Request a call <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="guided-content">
+        <header class="guide-intro"><p class="eyebrow">Explore · Share · Connect</p><h2>Explore what's possible for your project.</h2><p>Explore design considerations and share what you already know with HM Pools.</p><div class="guide-intro__instruction"><strong>Select an option to explore drawings, examples and technical guidance.</strong></div><button class="upload-shortcut" type="button" data-action="next" data-section="upload">Already have a sketch? Add it first &rarr;</button></header>
+        <div id="sections"></div>
+        <details id="references-area" class="references-area"><summary>Reference projects</summary><p>Explore the existing HM Pools project collection. These examples are references, not technical specifications for your project.</p><div class="refs" id="refs"></div></details>
+      </div>
+      <aside class="project-navigator" aria-label="Your Project">
+        <header><h2>Your Project</h2><p id="plan-count" aria-live="polite"></p></header>
+        <nav id="project-nav" aria-label="Project categories"></nav>
+        <div class="project-actions"><h3>Have a project in mind?</h3><p id="project-ready">Let's discuss what you know so far.</p><button class="btn btn--solid" type="button" id="book">Request a call <span aria-hidden="true">↗</span></button></div>
+      </aside>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <a href="#" data-home aria-label="HM Pools, front page"><img src="img/HM_Pools_logo_RGB_musta-2048x1344.png" alt="HM Pools" width="2048" height="1344"></a>
+        <p>Stainless steel pools for considered architectural projects.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="#" data-architect>Architect's Guide</a>
+        <button type="button" data-action="direct-contact">Contact HM Pools</button>
+      </nav>
+      <p class="site-footer__copyright">&copy; 2026 HM Pools. All rights reserved.</p>
+    </div>
+  </footer>
+  <dialog class="modal direct-contact" id="direct-contact" aria-labelledby="direct-contact-title">
+    <div class="modal__inner">
+      <button class="modal__close" type="button" data-direct-close aria-label="Close contact form">
+        <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 2l14 14M16 2L2 16" /></svg>
+      </button>
+      <header class="modal__head">
+        <h2 class="modal__title" id="direct-contact-title" tabindex="-1">Contact HM Pools</h2>
+        <p class="modal__lead">Ask a question or introduce your project. You can contact us without completing the Architect's Guide.</p>
+      </header>
+      <form id="direct-contact-form" novalidate>
+        <div class="modal__grid">
+          <div class="mfield"><label for="direct-name">Name *</label><input id="direct-name" name="name" type="text" autocomplete="name" required><p class="mfield__error" id="direct-name-error" hidden>Please enter your name.</p></div>
+          <div class="mfield"><label for="direct-email">Email *</label><input id="direct-email" name="email" type="email" autocomplete="email" required><p class="mfield__error" id="direct-email-error" hidden>Please enter a valid email address.</p></div>
+          <div class="mfield"><label for="direct-phone">Phone <span class="mfield__opt">(optional)</span></label><input id="direct-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="mfield"><label for="direct-company">Company <span class="mfield__opt">(optional)</span></label><input id="direct-company" name="company" type="text" autocomplete="organization"></div>
+          <div class="mfield mfield--wide"><label for="direct-message">Message *</label><textarea id="direct-message" name="message" rows="5" required></textarea><p class="mfield__error" id="direct-message-error" hidden>Please enter a message.</p></div>
+        </div>
+        <p class="direct-contact__note">This opens a draft in your email app. Nothing is sent until you send it there.</p>
+        <div class="modal__foot"><a href="https://hmpools.fi/en/contact-us/" target="_blank" rel="noopener">HM Pools contact information</a><button class="btn btn--solid" type="submit">Continue in email app</button></div>
+        <a id="direct-email-link" hidden aria-hidden="true" tabindex="-1"></a>
+      </form>
+    </div>
+  </dialog>
+  <dialog class="image-lightbox" id="image-lightbox" aria-label="Enlarged pool image">
+    <button class="image-lightbox__close" id="image-lightbox-close" type="button" aria-label="Close enlarged image"
+      title="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" /></svg>
+    </button>
+
+    <img class="image-lightbox__img" id="image-lightbox-img" alt="">
+  </dialog>
+
+  <dialog class="modal" id="consult" aria-labelledby="consult-title">
+    <div class="modal__inner">
+      <button class="modal__close" type="button" data-close aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+          <path d="M2 2l14 14M16 2L2 16" />
+        </svg>
+      </button>
+
+      <form class="modal__form" id="consult-form" novalidate>
+        <header class="modal__head">
+          <h2 class="modal__title" id="consult-title" tabindex="-1">Review your project</h2>
+          <p class="modal__lead" id="consult-lead">Check your answers before adding contact details.</p>
+        </header>
+
+        <section id="review-step" aria-label="Project summary">
+          <header class="print-header" aria-hidden="true">
+            <img src="img/HM_Pools_logo_RGB_musta-2048x1344.png" alt="" width="2048" height="1344">
+            <h2>Project Information Summary</h2>
+          </header>
+          <div class="review-tools">
+            <button class="review-download" type="button" id="download-summary" title="Open print options to save your summary as PDF">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg>
+              Download PDF
+            </button>
+          </div>
+          <details class="review-summary" id="review-summary"><summary>View project details <span id="review-summary-count"></span></summary><dl class="modal__plan" id="consult-plan" aria-label="Your project brief"></dl></details>
+          <p class="print-note">This document is intended for preliminary project information collection and discussion only. All technical specifications, feasibility and final design requirements must be reviewed and confirmed with HM Pools.</p>
+          <div id="review-missing" role="status"></div>
+          <button class="btn btn--solid" type="button" id="continue-contact">Continue to request a call <span aria-hidden="true">↗</span></button>
+        </section>
+        <div id="contact-step" hidden>
+          <button class="summary-edit" type="button" id="back-review">Back to project summary</button>
+
+        <div class="modal__grid">
+          <div class="mfield">
+            <label for="c-name">Name <span aria-hidden="true">*</span></label>
+            <input id="c-name" name="name" type="text" autocomplete="name" required>
+            <p class="mfield__error" id="c-name-err" hidden>Please enter your name.</p>
+          </div>
+          <div class="mfield">
+            <label for="c-company">Company <span class="mfield__opt">(optional)</span></label>
+            <input id="c-company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div class="mfield">
+            <label for="c-phone">Phone <span aria-hidden="true">*</span></label>
+            <input id="c-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            <p class="mfield__error" id="c-phone-err" hidden>Please enter a phone number.</p>
+          </div>
+          <div class="mfield">
+            <label for="c-email">Email <span aria-hidden="true">*</span></label>
+            <input id="c-email" name="email" type="email" autocomplete="email" required>
+            <p class="mfield__error" id="c-email-err" hidden>Please enter a valid email address.</p>
+          </div>
+          <div class="mfield mfield--wide">
+            <label for="c-message">Message <span class="mfield__opt">(optional)</span></label>
+            <textarea id="c-message" name="message" rows="4"
+              placeholder="Timeline, budget range, questions for HM Pools"></textarea>
+          </div>
+        </div>
+
+        <div class="mfield">
+          <label class="consent">
+            <input type="checkbox" id="c-consent" name="consent" required>
+            <span>I accept that the form entries are checked for spam and stored encrypted for 14 days.</span>
+          </label>
+          <p class="mfield__error" id="c-consent-err" hidden>Please accept to send the request.</p>
+        </div>
+
+        <div class="modal__foot">
+          <p class="modal__direct">Prefer to call? <a href="tel:+358443600030">+358 44 360 0030</a></p>
+          <button class="btn btn--solid modal__send" type="submit">Request a call</button>
+        </div>
+      </div></form>
+
+      <div class="modal__done" id="consult-done" hidden>
+        <h2 class="modal__title" tabindex="-1">Thank you</h2>
+        <p class="modal__lead">This prototype shows the completed enquiry. No information or attachments have been sent, and no phone call has been booked.
+        </p>
+        <button class="btn btn--solid" type="button" data-close>Back to the guide</button>
+      </div>
+    </div>
+  </dialog>
+<style>body{max-width:1100px!important;margin:0 auto!important;padding:24px!important}</style><script>window.addEventListener("load",()=>setTimeout(()=>{document.querySelector("#section-type [data-choice=infinity]").click();const node=document.querySelector("#section-type .stats");document.body.replaceChildren(node);},300));</script></body>
+
+</html>

@@ -37,21 +37,25 @@
     </div>
   </header>
 
+  <div class="landing">
   <section class="hero" aria-labelledby="hero-title">
     <img class="hero__bg" src="img/hero.jpg" alt="" width="1983" height="1321" fetchpriority="high">
     <div class="hero__content">
-      <p class="hero__eyebrow reveal" style="--d: 0">HM Pools / For architects</p>
-      <h1 class="hero__title reveal" id="hero-title" style="--d: 1">Architect's pool guide</h1>
-      <p class="hero__sub reveal" style="--d: 2">Explore stainless steel pool design possibilities and understand what they mean for your project.</p>
-      <p class="hero__description reveal" style="--d: 3">Compare pool types, explore built examples and record your project's essential details at your own pace. Share your ideas with HM Pools when you're ready.</p>
-      <a class="btn btn--solid hero__cta reveal" href="#guide" style="--d: 4">Begin exploring <span aria-hidden="true">&rarr;</span></a>
+      <p class="hero__eyebrow reveal" style="--d: 0">HM Pools / Architect's Guide</p>
+      <h1 class="hero__title reveal" id="hero-title" style="--d: 1">Explore what's possible for your pool project.</h1>
+      <p class="hero__sub reveal" style="--d: 2">Technical insight for early-stage pool design.</p>
+      <a class="btn btn--solid hero__cta reveal" href="#guide" style="--d: 3">Start exploring <span aria-hidden="true">&darr;</span></a>
     </div>
-    <a class="hero__scroll" href="#guide" aria-label="Scroll to the guide">
-      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
-        <path d="M4 8l7 7 7-7" />
-      </svg>
-    </a>
   </section>
+  <section class="hero-capabilities" aria-labelledby="hero-capabilities-title">
+    <div class="hero-capabilities__inner">
+      <h2 class="hero-capabilities__label" id="hero-capabilities-title">What this guide helps you do</h2>
+      <div><h3>Explore</h3><p>Drawings, examples and technical guidance</p></div>
+      <div><h3>Share</h3><p>Project details and open questions</p></div>
+      <div><h3>Connect</h3><p>Start a conversation with HM Pools</p></div>
+    </div>
+  </section>
+  </div>
   <div class="guide-layout">
     <main class="guide" id="guide" tabindex="-1">
       <div class="mobile-project">
@@ -60,7 +64,7 @@
         <button class="btn btn--solid" type="button" data-action="review">Request a call <span aria-hidden="true">↗</span></button>
       </div>
       <div class="guided-content">
-        <header class="guide-intro"><p class="eyebrow">Explore · Understand · Discuss</p><h2>Explore what's possible for your project.</h2><p>Explore design considerations, share what you already know, and bring your open questions to HM Pools. You do not need a finished pool design to start a conversation.</p><button class="upload-shortcut" type="button" data-action="next" data-section="upload">Already have a sketch? Add it first &rarr;</button></header>
+        <header class="guide-intro"><p class="eyebrow">Explore · Share · Connect</p><h2>Explore what's possible for your project.</h2><p>Explore design considerations and share what you already know with HM Pools.</p><div class="guide-intro__instruction"><strong>Select an option to explore drawings, examples and technical guidance.</strong></div><button class="upload-shortcut" type="button" data-action="next" data-section="upload">Already have a sketch? Add it first &rarr;</button></header>
         <div id="sections"></div>
         <details id="references-area" class="references-area"><summary>Reference projects</summary><p>Explore the existing HM Pools project collection. These examples are references, not technical specifications for your project.</p><div class="refs" id="refs"></div></details>
       </div>

@@ -28,23 +28,23 @@
       id: "use", title: "Purpose & rules", choices: [
         {
           id: "private", label: "Private home", img: "img/uusimaa.jpg",
-          blurb: "A pool used only by the owner's household. The public-pool water decree does not apply, but European domestic-pool standards and the local building rules do.",
-          specs: [["Standards", "EN 16582-1/-2 (domestic pools: slip resistance, ladders, entrapment); EN 16713-2 circulation: full turnover within max. 8 h"], ["Permit", "Under the Building Act (in force 1.1.2025) the need for a permit depends on the municipality's building ordinance, so ask rakennusvalvonta early"], ["Suction safety", "At least two suction outlets per suction line or certified anti-entrapment grilles"]]
+          blurb: "A pool used only by the owner's household. Safety and building requirements should be confirmed for the project's location and intended use.",
+          specs: [["Standards", "Confirm applicable domestic-pool standards with the relevant specialist designers."], ["Permit", "Ask the local building control authority whether the project requires permission."], ["Suction safety", "Coordinate suction outlet safety with the relevant pool and water-treatment designers."]]
         },
         {
           id: "public", label: "Hotel, spa, public", img: "img/mustasaari.jpg",
-          blurb: "Any pool the public can use (paid or free, private owner or not) is a 'public pool' under the Finnish pool-water decree. That covers hotels, spas, rehab centres and swimming halls.",
-          specs: [["Water quality", "STM decree 315/2002: water quality limits, owner's self-monitoring and regular sampling by the municipality"], ["Design safety", "EN 15288-1 (safety in design of public pools); fittings and grilles to EN 13451"], ["Suction outlets", "Velocity through grilles ≤ 0.5 m/s, gaps ≤ 8 mm, two outlets ≥ 2 m apart per suction line"], ["Circulation", "Overflow is the standard choice for public pools"]]
+          blurb: "Pools serving hotels, spas, rehabilitation centres or swimming halls may have different safety and water-quality requirements from household pools. Confirm the requirements for the intended use.",
+          specs: [["Water quality", "Confirm the applicable water-quality and monitoring requirements with the responsible authority."], ["Design safety", "Coordinate safety and fittings requirements with the relevant specialist designers."], ["Suction outlets", "Have the outlet layout and fittings reviewed for entrapment safety by the relevant specialist designer."], ["Circulation", "Discuss the circulation approach for the project's use with the water-treatment designer."]]
         },
         {
           id: "hottub", label: "Hot tub / spa pool", img: "img/clarion.jpg",
           blurb: "Small, hot and heavily used per litre of water. High temperature speeds up corrosion, which affects the steel grade and the plant.",
-          specs: [["Standard", "Domestic spas: EN 17125 requires two suction fittings per pump, or one certified grille"], ["Public", "Spas open to the public fall under STM 315/2002"], ["Floor load", "1 m of water ≈ 10 kN/m², plus people and the shell"], ["Steel grade", "Warm, chloride-rich water. Confirm the grade with HM Pools"]]
+          specs: [["Standards", "Confirm applicable spa-pool safety requirements for the project's intended use."], ["Public use", "Check whether additional requirements apply if the spa is open beyond a private household."], ["Floor load", "The structural designer should account for water, people and the pool structure."], ["Steel grade", "Warm, chloride-rich water. Confirm the grade with HM Pools"]]
         },
         {
           id: "therapy", label: "Therapy & rehab", img: "img/live.jpg",
           blurb: "Warm water and users with reduced mobility. Accessibility equipment and ventilation drive the design.",
-          specs: [["Access", "Lift, stairs with handrails on both sides"], ["Ventilation", "Warmer water evaporates more, so dehumidification must be upsized"], ["Regulation", "STM 315/2002 and EN 15288-1 when open to the public"]]
+          specs: [["Access", "Lift, stairs with handrails on both sides"], ["Ventilation", "Warmer water evaporates more, so dehumidification must be upsized"], ["Requirements", "Confirm applicable requirements for the specific use with the responsible authority and specialist designers."]]
         }
       ]
     },
@@ -64,7 +64,7 @@
         {
           id: "outdoor", label: "Outdoors, in the ground", img: "img/oulu.jpg",
           blurb: "The finished steel pool arrives in one piece and is lifted into place. In the Finnish climate, the key question is summer-only or year-round use.",
-          specs: [["Delivery", "Truck and crane, so plan crane access to the spot"], ["Foundation", "The pool requires a suitable engineered support structure. Foundation type, ground conditions, frost protection and drainage must be coordinated with the structural designer and HM Pools."], ["Season", "Summer only, or heated and covered all year?"], ["Ground", "Frost protection and rainwater drainage around the pool"], ["Surroundings", "Trees and wind bring leaves into the water"], ["Time", "Design and manufacturing 10-20 weeks, installation a few days"]]
+          specs: [["Delivery", "Truck and crane, so plan crane access to the spot"], ["Foundation", "Possible support arrangements include a concrete slab, concrete tiles or other suitable supporting structures. The final foundation design is the responsibility of the structural designer."], ["Season", "Summer only, or heated and covered all year?"], ["Ground", "Frost protection and rainwater drainage around the pool"], ["Surroundings", "Trees and wind bring leaves into the water"], ["Time", "Design and manufacturing 10-20 weeks, installation a few days"]]
         },
         {
           id: "indoor", label: "Indoors, in a building", img: "img/raasepori.jpg",
@@ -76,7 +76,7 @@
           blurb: "An existing pool may be renovated by installing a new stainless steel structure within or in place of the old pool. The approach depends on the condition, dimensions and structural capacity of the existing construction.",
           specs: [
             ["Survey", "Check the existing pool dimensions, structure, waterproofing and condition before selecting a renovation method."],
-            ["Space", "Allow for any reduction in internal dimensions caused by the new structure and installation details."],
+            ["Space", "For installations within an existing pool, the available internal length and width may decrease by approximately 10 mm per side. The final height depends on the existing structure and piping arrangements."],
             ["Connections", "Review existing pipework, drainage, water treatment and technical space for possible upgrades."],
             ["Construction", "Installation and project duration depend on site access and the condition of the existing pool."]
           ]
@@ -88,7 +88,7 @@
         {
           id: "mains", label: "Municipal water",
           blurb: "The simplest option: the pool is filled and topped up from the municipal water supply.",
-          specs: [["Fill volume", "Length \u00d7 width \u00d7 average depth. A 12 \u00d7 4 m pool with 1.5 m average depth holds about 72 m\u00b3"], ["Top-up", "Pools lose water to evaporation and filter backwashing, so plan a permanent water connection to the technical room"], ["Drainage", "Plan how filter backwash, pool emptying and overflow water will be discharged. Confirm the permitted discharge route and any treatment requirements with the local water authority."]]
+          specs: [["Fill volume", "Length \u00d7 width \u00d7 average depth. A 12 \u00d7 4 m pool with 1.5 m average depth holds about 72 m\u00b3"], ["Top-up", "Pools lose water to evaporation and filter backwashing, so plan a permanent water connection to the technical room"], ["Drainage", "Plan how filter backwash, pool emptying and overflow water will be discharged. The drainage system should be designed by the HVAC/building services designer. Confirm the permitted discharge route and any treatment requirements with the local water authority."]]
         },
         {
           id: "well", label: "Own well",
@@ -107,7 +107,7 @@
         {
           id: "stairs", label: "Built-in stairs", img: "img/uusimaa.jpg",
           blurb: "Integrated stainless steel stairs provide access to the pool and can be designed to match its form and finish. Their position and dimensions should be considered early, as later changes may require modifications to the pool structure.",
-          specs: [["Space", "Stairs take pool area, so include them in the layout"], ["Safety", "Slip-resistant treads and a handrail"]]
+          specs: [["Space", "Stairs take pool area, so include them in the layout"], ["Safety", "Slip-resistant treads and a handrail"], ["Surface finish", "Different surface finishes may be available, including slip-resistant finishes. Discuss the suitable finish later in the design process."]]
         },
         {
           id: "ladder", label: "Ladder", img: "img/ahtari.jpg",
@@ -119,6 +119,7 @@
           blurb: "An integrated bench or shallow ledge creates a place to sit, rest or enter the water. Its location, dimensions and water depth should be considered as part of the pool layout.",
           specs: [
             ["Layout", "Reserve sufficient space for the bench or ledge without restricting the intended swimming area."],
+            ["Construction", "Benches may use solid or open/pipe structures. The construction approach can be discussed later in the design process."],
             ["Design", "Coordinate the dimensions, edges and finish with HM Pools during the design stage."]
           ]
         }
@@ -128,7 +129,7 @@
       id: "covers", title: "Cover", choices: [
         {
           id: "auto", label: "Automatic cover", img: "img/live-cover.jpg",
-          blurb: "A slatted cover that rolls out at the push of a button. Saves energy and keeps children and pets out.",
+          blurb: "A slatted cover that rolls out at the push of a button. It can reduce heat loss and help keep debris out. Any safety role depends on the specific cover and project requirements.",
           specs: [["Space", "The roll sits in a pit, under a bench or at the pool end. Decide where early"], ["Power", "Needs an electrical supply"]]
         },
         {
@@ -155,6 +156,8 @@
           blurb: "Steel pools look great lit from within. Light positions are fixed before manufacturing, because the openings are made in the factory.",
           specs: [
             ["Positions", "Plan underwater light locations and cable routes before manufacturing."],
+            ["Lighting type", "Spotlights and LED strips are possibilities. Confirm which types suit this project."],
+            ["Lighting colour", "White and RGB lighting are separate colour possibilities. Confirm which type-and-colour combinations are available for this project."],
             ["Electrical safety", "Use pool-rated lighting and electrical equipment installed according to applicable electrical safety requirements."],
             ["Coordination", "Coordinate electrical connections, bonding and equipment locations with a qualified electrical designer."]
           ]
@@ -219,7 +222,7 @@
           label: "Technical room",
           img: "img/lehmonkarki.jpg",
 
-          blurb: "Pool water treatment requires space for circulation, filtration, heating, dosing and controls. HM Pools supplies the stainless steel pool, while the water treatment system is planned with a specialist equipment partner. Involve the technical designer early so that space, access and service connections can be coordinated with the building design.",
+          blurb: "Pool water treatment requires space for circulation, filtration, heating, dosing and controls. Solutions depend on the project's requirements and can be discussed with relevant specialists. Involve the technical designer early so that space, access and service connections can be coordinated with the building design.",
 
           specs: [
             ["Equipment", "Allow space for pumps, filters, heating, dosing equipment and controls. Exact requirements depend on pool size, use and treatment system."],
@@ -232,7 +235,7 @@
 
             ["Maintenance", "Provide sufficient working space and access for equipment replacement and servicing."],
 
-            ["Early decision", "Confirm the approximate technical space requirements with HM Pools and its equipment partner before finalising the floor plan."]
+            ["Early decision", "Discuss approximate technical space requirements with HM Pools and relevant water treatment specialists before finalising the floor plan."]
           ]
         }
       ]
@@ -247,8 +250,9 @@
   ];
 
   var order = ['use', 'install', 'type', 'dims', 'upload', 'plant', 'water', 'access', 'covers', 'lighting', 'features'];
+  // TODO: Confirm applicable pool safety regulations and final wording with Olli.
   var reminders = {
-    use: 'Who will use the pool? Its purpose determines which design requirements need to be considered from the start.',
+    use: 'Who will use the pool? Its purpose determines which design requirements need to be considered from the start. Depending on the project, pool safety considerations may include controlled access, fencing or suitable covers. Applicable requirements should be confirmed for the specific location and use.',
     install: 'The site affects structural support, access for installation and building services. Start with where the pool will go.',
     type: 'Pool type affects the water level, edge detail and space for water treatment. Compare the options before recording a preference.',
     dims: 'Allow for more than the swimming area: depth, structure and access also affect the space needed. Approximate dimensions are welcome.',
@@ -256,7 +260,7 @@
     water: 'The water source can affect treatment and material choices. Consider supply and drainage early.',
     access: 'Stairs, ladders and seating affect the usable swimming area. Consider who needs to enter and leave the pool.',
     covers: 'A cover can need storage space, tracks or changes to the pool edge. Consider it while planning the layout.',
-    lighting: 'Light positions and cable routes need coordination before manufacturing. Explore the options even if your preference is not settled.',
+    lighting: 'Lighting type (such as spotlights or LED strips) and colour (white or RGB) are separate considerations. Confirm the available combinations, positions and cable routes for the project before manufacturing.',
     features: 'Extra features can require openings, equipment space and service connections. Record any interests or questions for the first discussion.'
   };
   HM.sections.sort(function(a,b) { return order.indexOf(a.id) - order.indexOf(b.id); });
